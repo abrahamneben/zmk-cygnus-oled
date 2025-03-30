@@ -17,18 +17,18 @@ include:
   - board: seeeduino_xiao_ble
     shield: cygnus_central_dongle dongle_display
     artifact-name: cygnus_central_dongle
-#  - board: seeeduino_xiao_ble
-#    shield: cygnus_central_left
-#    artifact-name: cygnus_central_left
-#  - board: seeeduino_xiao_ble
-#    shield: cygnus_peripheral_left
-#    artifact-name: cygnus_peripheral_left
-#  - board: seeeduino_xiao_ble
-#    shield: cygnus_peripheral_right
-#    artifact-name: cygnus_peripheral_right
-#  - board: seeeduino_xiao_ble
-#    shield: settings_reset
-#  - board: seeeduino_xiao_ble
-#    shield: cygnus_central_dongle dongle_display
-#    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
-#    artifact-name: cygnus_central_dongle_with_logging
+  - board: seeeduino_xiao_ble
+    shield: cygnus_central_left
+    artifact-name: cygnus_central_left
+  - board: seeeduino_xiao_ble
+    shield: cygnus_peripheral_left
+    artifact-name: cygnus_peripheral_left
+  - board: seeeduino_xiao_ble
+    shield: cygnus_peripheral_right
+    artifact-name: cygnus_peripheral_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: cygnus_central_dongle dongle_display
+    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
+    artifact-name: cygnus_central_dongle_with_logging
