@@ -23,53 +23,33 @@
     combos {
         compatible = "zmk,combos";
 
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 2>;
-            timeout-ms = <50>;
-        };
-
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
-            timeout-ms = <50>;
-        };
-
-        left_par {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <12 13>;
-            timeout-ms = <50>;
-        };
-
-        right_par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 17>;
-            timeout-ms = <50>;
-        };
-
-        left_brace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <23 22>;
-            timeout-ms = <50>;
-        };
-
-        right_brace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <26 27>;
-            timeout-ms = <50>;
-        };
-
-        bac {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <4 5>;
-        };
-
         pipe {
-            bindings = <&kp PIPE>;
+            bindings = <&altsae>;
             key-positions = <14 15>;
         };
     };
 
+macros {
+        altsae: altsae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(LG(S)) &kp RA(LG(A)) &kp RA(LG(E))>;
+            label = "ALTSAE";
+        };
+
+        mmattest: mmattest {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp F2 &kp BACKSPACE &kp PERIOD &kp M &kp M &kp A &kp T &kp T &kp E &kp S &kp T>,
+                <&macro_wait_time 500>,
+                <&kp ENTER>,
+                <&macro_wait_time 500>,
+                <&kp F2>;
+
+            label = "MMATTEST";
+        };
+    };
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -144,7 +124,7 @@
 &kp NUMBER_1          &kp NUMBER_2          &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6               &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9  &kp NUMBER_0
 &kp LG(A)             &kp LG(S)             &kp LG(D)             &kp LG(F)     &kp LEFT_BRACKET  &kp RIGHT_BRACKET          &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI
 &kp LG(Z)             &kp LG(X)             &kp LG(C)             &kp LG(V)     &kp LEFT_BRACE    &kp RIGHT_BRACE            &kp F1          &kp F2            &kp F3        &kp F4
-              &trans                &trans                &trans                &trans            &trans             &trans
+              &trans                &mmattest                &trans                &trans            &mmattest             &trans
             >;
         };
 
