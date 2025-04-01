@@ -17,8 +17,6 @@ include:
   - board: seeeduino_xiao_ble
     shield: cygnus_central_dongle dongle_display
     artifact-name: cygnus_central_dongle    
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
     shield: cygnus_central_left
     artifact-name: cygnus_central_left
