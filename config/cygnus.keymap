@@ -27,9 +27,22 @@
             bindings = <&altsae>;
             key-positions = <14 15>;
         };
+
+        winaltsae {
+            bindings = <&winaltsae>;
+            key-positions = <24 25>;
+        };
     };
 
 macros {
+
+        winaltsae: winaltsae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(S) &kp RA(A) &kp RA(E)>;
+            label = "WINALTSAE";
+        };
+
         altsae: altsae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -103,7 +116,7 @@ macros {
 
         layer_1{
             bindings = <
-&trans              &trans                &kp UP            &trans     &trans             &bt BT_SEL 0          &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bootloader              &trans                &kp UP            &trans     &trans             &bt BT_SEL 0          &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &bt BT_NXT          &kp LEFT              &kp DOWN          &kp RIGHT  &kp C_VOLUME_UP    &kp C_BRI_UP          &bt BT_CLR    &trans        &trans        &trans
 &bt BT_PRV          &out OUT_TOG          &trans            &trans     &kp C_VOLUME_DOWN  &kp C_BRI_DN          &trans        &trans        &trans        &trans
             &trans                &trans            &trans             &trans             &trans        &trans
@@ -130,7 +143,7 @@ macros {
 
         layer_4 {
             bindings = <
-&trans          &msc SCRL_UP   &mmv MOVE_UP  &msc SCRL_DOWN  &trans  &trans          &trans  &trans  &trans  &trans
+&trans          &msc SCRL_UP   &mmv MOVE_UP  &msc SCRL_DOWN  &trans  &trans          &trans  &trans  &trans  &bootloader
 &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans          &trans  &trans  &trans  &trans
 &trans          &trans          &trans          &trans  &trans  &trans          &trans  &trans  &trans  &trans
         &trans          &mkp LCLK  &mkp RCLK         &trans  &trans  &trans
