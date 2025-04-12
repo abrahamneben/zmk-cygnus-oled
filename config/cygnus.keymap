@@ -61,9 +61,9 @@
     };
 
     behaviors {
-        hm: homerow_mods {
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <200>;
@@ -72,6 +72,7 @@
 
             quick-tap-ms = <180>;
             global-quick-tap;
+            hold-trigger-key-positions = <6 18 30 31 19 7 20 32 8 9 21 33 34 22 10 11 23 35>;
         };
 
         ltq: ltq {
@@ -97,6 +98,20 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
         };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <180>;
+            global-quick-tap;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
+        };
     };
 
     keymap {
@@ -104,10 +119,10 @@
 
         layer_0 {
             bindings = <
-&kp TAB               &kp SEMI  &kp COMMA         &kp DOT      &kp P      &kp Y             &kp F         &kp G         &kp C  &kp R  &kp L  &kp FSLH
-&mt LEFT_SHIFT ENTER  &kp A     &kp O             &kp E        &kp U      &kp I             &kp D         &kp H         &kp T  &kp N  &kp S  &mt RIGHT_SHIFT SPACE
-&kp LSHFT             &kp SQT   &kp Q             &kp J        &kp K      &kp X             &kp B         &kp M         &kp W  &kp V  &kp Z  &kp RIGHT_SHIFT
-                                &ltq 1 BACKSPACE  &lt 3 ENTER  &lt 2 TAB  &ltq 2 BACKSPACE  &ltq 3 SPACE  &ltq 4 SPACE
+&kp TAB               &kp SEMI          &kp COMMA            &kp DOT           &kp P         &kp Y             &kp F         &kp G         &kp C             &kp R  &kp L             &kp FSLH
+&mt LEFT_SHIFT ENTER  &hml LC(LMETA) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I             &kp D         &hmr RMETA H  &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
+&kp LSHFT             &kp SQT           &kp Q                &kp J             &kp K         &kp X             &kp B         &kp M         &kp W             &kp V  &kp Z             &kp RIGHT_SHIFT
+                                        &ltq 1 BACKSPACE     &lt 3 ENTER       &lt 2 TAB     &ltq 2 BACKSPACE  &ltq 3 SPACE  &ltq 4 SPACE
             >;
         };
 
