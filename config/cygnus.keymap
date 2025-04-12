@@ -149,10 +149,10 @@
 
         num {
             bindings = <
-&trans  &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp PERCENT  &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &kp TILDE   &kp LEFT_BRACKET      &kp AMPS     &kp RIGHT_BRACKET      &kp BSLH   &kp ASTRK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &trans
-&trans  &kp EXCL    &kp LEFT_BRACE        &kp MINUS    &kp RIGHT_BRACE        &kp PIPE   &kp UNDER  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &trans
-                    &trans                &mmattest    &trans                 &trans     &mmattest  &trans
+&kp LC(TAB)      &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp PERCENT  &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&kp LC(LS(TAB))  &kp TILDE   &kp LEFT_BRACKET      &kp AMPS     &kp RIGHT_BRACKET      &kp BSLH   &kp ASTRK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &trans
+&trans           &kp EXCL    &kp LEFT_BRACE        &kp MINUS    &kp RIGHT_BRACE        &kp PIPE   &kp UNDER  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &trans
+                             &trans                &mmattest    &trans                 &trans     &mmattest  &trans
             >;
         };
     };
