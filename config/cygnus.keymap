@@ -114,10 +114,10 @@
 
         base {
             bindings = <
-&kp TAB               &kp SEMI                 &kp COMMA            &lhtl 2 PERIOD    &lhtl 1 P     &kp Y              &kp F          &lhtr 1 G      &kp C             &kp R  &kp L             &kp FSLH
-&mt LEFT_SHIFT ENTER  &hml LC(LEFT_COMMAND) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I              &kp D          &hmr RMETA H   &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
-&kp HASH              &kp SQT                  &kp Q                &kp J             &lhtl 3 K     &kp X              &kp B          &lhtr 3 M      &kp W             &kp V  &kp Z             &kp AT
-                                               &lhtl 1 BACKSPACE    &lt 3 ENTER       &kp ESCAPE    &lhtl 0 BACKSPACE  &lhtl 3 SPACE  &lhtl 0 SPACE
+&kp TAB               &kp SEMI           &kp COMMA            &lhtl 2 PERIOD    &lhtl 1 P     &kp Y              &kp F          &lhtr 1 G      &kp C             &kp R  &kp L               &kp FSLH
+&mt LEFT_SHIFT ENTER  &hml LEFT_SHIFT A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I              &kp D          &hmr RMETA H   &hmr LS(RMETA) T  &kp N  &hmr RIGHT_SHIFT S  &mt RIGHT_SHIFT SPACE
+&kp HASH              &kp SQT            &kp Q                &kp J             &lhtl 3 K     &kp X              &kp B          &lhtr 3 M      &kp W             &kp V  &kp Z               &kp AT
+                                         &lhtl 1 BACKSPACE    &lt 3 ENTER       &kp ESCAPE    &lhtl 0 BACKSPACE  &lhtl 3 SPACE  &lhtl 0 SPACE
             >;
         };
 
@@ -144,7 +144,7 @@
 &kp LC(TAB)      &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp PERCENT  &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
 &kp LC(LS(TAB))  &kp TILDE   &kp LEFT_BRACKET      &kp AMPS     &kp RIGHT_BRACKET      &kp BSLH   &kp ASTRK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &trans
 &kp GRAVE        &kp EXCL    &kp LEFT_BRACE        &kp MINUS    &kp RIGHT_BRACE        &kp PIPE   &kp UNDER  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &kp CARET
-                             &trans                &mmattest    &trans                 &trans     &mmattest  &trans
+                             &trans                &none        &trans                 &trans     &none      &trans
             >;
         };
     };
