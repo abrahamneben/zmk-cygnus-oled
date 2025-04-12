@@ -122,10 +122,10 @@
 
         base {
             bindings = <
-&kp TAB               &kp SEMI          &kp COMMA            &kp DOT           &kp P         &kp Y              &kp F          &kp G          &kp C             &kp R  &kp L             &kp FSLH
-&mt LEFT_SHIFT ENTER  &hml LC(LMETA) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I              &kp D          &hmr RMETA H   &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
-&kp LSHFT             &kp SQT           &kp Q                &kp J             &kp K         &kp X              &kp B          &kp M          &kp W             &kp V  &kp Z             &kp RIGHT_SHIFT
-                                        &lhtl 1 BACKSPACE    &lt 3 ENTER       &kp ESCAPE    &lhtl 2 BACKSPACE  &lhtl 3 SPACE  &lhtl 0 SPACE
+&kp TAB               &kp SEMI                 &kp COMMA            &kp DOT           &lhtl 1 P     &kp Y              &kp F          &lhtr 1 G      &kp C             &kp R  &kp L             &kp FSLH
+&mt LEFT_SHIFT ENTER  &hml LC(LEFT_COMMAND) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I              &kp D          &hmr RMETA H   &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
+&kp LSHFT             &kp SQT                  &kp Q                &kp J             &lhtl 3 K     &kp X              &kp B          &lhtr 3 M      &kp W             &kp V  &kp Z             &kp RIGHT_SHIFT
+                                               &lhtl 1 BACKSPACE    &lt 3 ENTER       &kp ESCAPE    &lhtl 2 BACKSPACE  &lhtl 3 SPACE  &lhtl 0 SPACE
             >;
         };
 
