@@ -19,14 +19,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        pipe {
-            bindings = <&altsae>;
-            key-positions = <17 18>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         up5: up5 {
