@@ -31,31 +31,18 @@
     };
 
     macros {
-        winaltsae: winaltsae {
+        up5: up5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(S) &kp RA(A) &kp RA(E)>;
-            label = "WINALTSAE";
+            bindings = <&kp UP_ARROW &kp UP &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
+            label = "UP5";
         };
 
-        altsae: altsae {
+        down5: down5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(LG(S)) &kp RA(LG(A)) &kp RA(LG(E))>;
-            label = "ALTSAE";
-        };
-
-        mmattest: mmattest {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp F2 &kp BACKSPACE &kp PERIOD &kp M &kp M &kp A &kp T &kp T &kp E &kp S &kp T>,
-                <&macro_wait_time 500>,
-                <&kp ENTER>,
-                <&macro_wait_time 500>,
-                <&kp F2>;
-
-            label = "MMATTEST";
+            bindings = <&kp DOWN &kp DOWN_ARROW &kp DOWN &kp DOWN_ARROW &kp DOWN_ARROW>;
+            label = "DOWN5";
         };
     };
 
@@ -131,10 +118,10 @@
 
         mod {
             bindings = <
-&trans  &trans      &trans        &kp UP    &trans     &trans             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&trans  &bt BT_NXT  &kp LEFT      &kp DOWN  &kp RIGHT  &kp C_VOLUME_UP    &kp C_BRI_UP  &bt BT_CLR    &trans        &trans        &trans        &trans
-&trans  &bt BT_PRV  &out OUT_TOG  &trans    &trans     &kp C_VOLUME_DOWN  &kp C_BRI_DN  &trans        &trans        &trans        &trans        &trans
-                    &trans        &trans    &trans     &trans             &trans        &trans
+&kp LG(LA(ESCAPE))  &trans      &kp LEFT_SHIFT  &none   &trans  &trans             &up5          &kp HOME  &kp UP_ARROW    &kp END    &bt BT_SEL 4  &kp BACKSPACE
+&kp LG(BACKSPACE)   &bt BT_NXT  &none           &none   &none   &none              &down5        &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans        &trans
+&trans              &bt BT_PRV  &out OUT_TOG    &trans  &trans  &kp C_VOLUME_DOWN  &kp C_BRI_DN  &trans    &trans          &trans     &trans        &trans
+                                &trans          &trans  &trans  &trans             &trans        &trans
             >;
         };
 
