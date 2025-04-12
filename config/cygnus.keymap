@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 &mt {
     tapping-term-ms = <200>;
@@ -75,9 +74,9 @@
             hold-trigger-key-positions = <6 18 30 31 19 7 20 32 8 9 21 33 34 22 10 11 23 35>;
         };
 
-        ltq: ltq {
+        lhtl: lhtl {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTQ";
+            label = "LHTL";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <200>;
@@ -86,17 +85,7 @@
 
             quick-tap-ms = <180>;
             global-quick-tap;
-        };
-
-        as: as {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
         };
 
         hmr: homerow_mods_right {
@@ -112,6 +101,20 @@
             global-quick-tap;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
         };
+
+        lhtr: lhtr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHTR";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+
+            quick-tap-ms = <180>;
+            global-quick-tap;
+            hold-trigger-key-positions = <0 1 4 5 12 13 14 15 16 17 24 25 26 27 28 29 2 3>;
+        };
     };
 
     keymap {
@@ -119,10 +122,10 @@
 
         base {
             bindings = <
-&kp TAB               &kp SEMI          &kp COMMA            &kp DOT           &kp P         &kp Y             &kp F         &kp G         &kp C             &kp R  &kp L             &kp FSLH
-&mt LEFT_SHIFT ENTER  &hml LC(LMETA) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I             &kp D         &hmr RMETA H  &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
-&kp LSHFT             &kp SQT           &kp Q                &kp J             &kp K         &kp X             &kp B         &kp M         &kp W             &kp V  &kp Z             &kp RIGHT_SHIFT
-                                        &ltq 1 BACKSPACE     &lt 3 ENTER       &kp ESCAPE    &ltq 2 BACKSPACE  &ltq 3 SPACE  &ltq 4 SPACE
+&kp TAB               &kp SEMI          &kp COMMA            &kp DOT           &kp P         &kp Y              &kp F          &kp G          &kp C             &kp R  &kp L             &kp FSLH
+&mt LEFT_SHIFT ENTER  &hml LC(LMETA) A  &hml LEFT_CONTROL O  &hml LS(LMETA) E  &hml LMETA U  &kp I              &kp D          &hmr RMETA H   &hmr LS(RMETA) T  &kp N  &hmr RC(RMETA) S  &mt RIGHT_SHIFT SPACE
+&kp LSHFT             &kp SQT           &kp Q                &kp J             &kp K         &kp X              &kp B          &kp M          &kp W             &kp V  &kp Z             &kp RIGHT_SHIFT
+                                        &lhtl 1 BACKSPACE    &lt 3 ENTER       &kp ESCAPE    &lhtl 2 BACKSPACE  &lhtl 3 SPACE  &lhtl 0 SPACE
             >;
         };
 
@@ -137,55 +140,19 @@
 
         layer_2 {
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND    &kp STAR                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp ESCAPE       &trans       &kp HOME  &kp END     &kp UNDER    &kp MINUS  &kp RIGHT_SHIFT  &kp PAGE_UP                     &kp PAGE_DOWN         &kp INSERT             &trans
-&trans  &kp BACKSPACE    &trans       &trans    &trans      &kp TILDE    &kp GRAVE  &as PLUS EQUAL   &as DOUBLE_QUOTES SINGLE_QUOTE  &as PIPE BACKSLASH    &kp DEL                &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND    &kp STAR     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp ESCAPE       &trans       &kp HOME  &kp END     &kp UNDER    &kp MINUS  &kp RIGHT_SHIFT  &kp PAGE_UP  &kp PAGE_DOWN         &kp INSERT             &trans
+&trans  &kp BACKSPACE    &trans       &trans    &trans      &kp TILDE    &kp GRAVE  &none            &none        &none                 &kp DEL                &trans
                          &trans       &trans    &trans      &trans       &trans     &trans
             >;
         };
 
-        layer_3 {
+        num {
             bindings = <
 &trans  &kp NUMBER_1          &kp F7    &kp UP     &kp F9     &kp EQUAL              &kp COLON     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
 &trans  &kp LEFT_PARENTHESIS  &kp LEFT  &kp DOWN   &kp RIGHT  &kp RIGHT_PARENTHESIS  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &trans
 &trans  &kp LEFT_SHIFT        &kp F1    &kp F2     &kp F3     &kp LEFT_BRACE         &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &trans
                               &trans    &mmattest  &trans     &trans                 &mmattest     &trans
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &trans  &trans  &trans  &trans  &trans  &bootloader  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans  &trans       &trans
-                &trans          &mkp LCLK       &mkp RCLK        &trans  &trans  &trans
-            >;
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
