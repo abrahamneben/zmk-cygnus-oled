@@ -8,18 +8,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-&mt {
-    tapping-term-ms = <200>;
-    flavor = "tap-preferred";
-};
+&mt { tapping-term-ms = <350>; };
 
 &sk {
     release-after-ms = <2000>;
     quick-release;
 };
 
-&lt {
-};
+&lt { tapping-term-ms = <350>; };
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -59,10 +55,10 @@
 
         base {
             bindings = <
-&kp TAB               &kp SEMI          &kp COMMA           &kp PERIOD   &kp P               &kp Y  &kp F  &kp G  &kp C  &kp R  &kp L  &kp FSLH
-&mt LEFT_SHIFT ENTER  &mt LEFT_SHIFT A  &mt LEFT_CONTROL O  &kp E        &mt LEFT_COMMAND U  &kp I  &kp D  &none  &none  &none  &none  &mt RIGHT_SHIFT SPACE
-&kp HASH              &kp SQT           &lt 2 Q             &lt 1 J      &lt 3 K             &kp X  &kp B  &none  &kp W  &kp V  &kp Z  &kp AT
-                                        &none               &lt 3 ENTER  &kp ESCAPE          &none  &none  &none
+&kp TAB               &kp SEMI            &kp COMMA           &kp PERIOD   &kp P               &kp Y  &kp F  &kp G                &kp C  &kp R                &kp L              &kp FSLH
+&mt LEFT_SHIFT ENTER  &kp A               &mt LEFT_CONTROL O  &kp E        &mt LEFT_COMMAND U  &kp I  &kp D  &mt RIGHT_COMMAND H  &kp T  &mt RIGHT_CONTROL N  &kp S              &mt RIGHT_SHIFT SPACE
+&kp HASH              &mt LEFT_SHIFT SQT  &lt 2 Q             &lt 1 J      &lt 3 K             &kp X  &kp B  &lt 3 M              &kp W  &kp V                &mt RIGHT_SHIFT Z  &kp AT
+                                          &none               &lt 3 ENTER  &kp ESCAPE          &none  &none  &none
             >;
         };
 
